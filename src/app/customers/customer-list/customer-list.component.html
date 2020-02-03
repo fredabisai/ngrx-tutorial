@@ -9,12 +9,12 @@
       <th></th>
     </tr>
   </thead>
-  <!-- <tbody>
+  <tbody>
     <tr>
-      <td colspan="5" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+      <!-- <td colspan="5" class="alert alert-danger" ></td> -->
     </tr>
     <tr>
-    <tr *ngFor="let customer of (customers$ |async)">
+    <tr *ngFor="let customer of customers">
       <th scope="row">{{customer.name}}</th>
       <td>{{customer.phone}}</td>
       <td>{{customer.address}}</td>
@@ -25,5 +25,5 @@
         <a (click)=deleteCustomer(customer)>delete</a>
       </th>
     </tr>
-  </tbody> -->
+  </tbody>
 </table>

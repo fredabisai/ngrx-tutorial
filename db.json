@@ -5,14 +5,16 @@
              "name": "Fransisco Maron",
              "email": "fransco@example.com",
              "phone": "+255610202020",
-             "address": "Masaki, Dar es salaam"
+             "address": "Masaki, Dar es salaam",
+             "membership": "VIP"
           },
           {              
             "id": 2,
             "name": "Tusco Douglas",
             "email": "tusco@example.com",
             "phone": "+255610203030",
-            "address": "Oysterbay, Dar es salaam"
+            "address": "Oysterbay, Dar es salaam",
+            "membership": "GOLD"
 
           }
     ]
