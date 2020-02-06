@@ -8,6 +8,8 @@ import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { from } from 'rxjs';
+import {EffectsModule, Actions} from '@ngrx/effects';
+import { CustomerEffects } from './state/customer.effects';
 
 
 const customerRoutes: Routes = [
@@ -22,7 +24,8 @@ const customerRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(customerRoutes),
-    StoreModule.forFeature('customers', customerReducer)
+    StoreModule.forFeature('customers', customerReducer),
+    EffectsModule.forFeature([CustomerEffects])
   ],
   providers: []
 })
