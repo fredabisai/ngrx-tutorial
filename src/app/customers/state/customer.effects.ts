@@ -29,5 +29,36 @@ export class CustomerEffects {
 
                   ))
     );
-    
+    @Effect()
+    loadCustomer: Observable<Action> = this.actions$.pipe(
+        ofType<customerActions.LoadCustomer>(
+            customerActions.CustomerActionTypes.LOAD_CUSTOMER
+        ),
+        mergeMap((
+            action: customerActions.LoadCustomer) => this.customerService
+                  .getCustomerById(action.payload).pipe(
+                      map(
+                          (customer: Customer
+                            ) => new customerActions.LoadCustomerSuccess(customer)
+                      ),
+                      catchError(err => of(new customerActions.LoadCustomerFail(err)))
+
+                  ))
+    );
+    @Effect()
+    createCustomer: Observable<Action> = this.actions$.pipe(
+        ofType<customerActions.CreateCustomer>(
+            customerActions.CustomerActionTypes.CREATE_CUSTOMER
+        ),
+        mergeMap((
+            action: customerActions.CreateCustomer) => this.customerService
+                  .createCustomer(action.payload).pipe(
+                      map(
+                          (customer: Customer
+                            ) => new customerActions.CreateCustomerSuccess(customer)
+                      ),
+                      catchError(err => of(new customerActions.CreateCustomerFail(err)))
+
+                  ))
+    );
 }
